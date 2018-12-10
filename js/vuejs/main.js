@@ -1,63 +1,65 @@
+var vm
+setTimeout(function(){
+  vm=new Vue({
+    el:"#app",
+    methods:{
+      photosLoader:function(){
+        //getPosts
+      },
+      postsLoader:function(){
 
-var vm=new Vue({
-  el:"#app",
-  methods:{
-    photosLoader:function(){
-      //getPosts
-    },
-    postsLoader:function(){
-
-    },
-    sendMessage:function(){
-      sendFormMessage()
-    }
-  },
-  data:{
-    layout:{
-      /*
-        HEADER
-      */
-      header:headerSettings,
-      /*
-        FOOTER
-      */
-      footer:footerSettings,
-      /*
-        CONTENT
-      */
-      content:{
-        slider:sliderSettings,
-        /*
-          SOCIAL MEDIA
-        */
-        socialMedia:socialmediaSettings,
-        /*
-          CONTACT
-        */
-        contact:{
-          phoneNumbers:phoneList,
-          emails:emailList,
-          contactForm:{
-            active:true,
-            sendURL:"",
-            config:{
-              user:"",
-              pass:"",
-              host:""
-            }
-          }
-        },
-        /*
-          CATEGORIES
-        */
-        categories:{
-          items:categoriesList,
-          elseButton:elsebuttonSettings
-        }
+      },
+      sendMessage:function(){
+        sendFormMessage()
       }
     },
-    backgroundAnimation:backgroundSettings,
-    photos:[],
-    posts:[]
-  }
-});
+    data:{
+      layout:{
+        /*
+          HEADER
+        */
+        header:headerSettings,
+        /*
+          FOOTER
+        */
+        footer:footerSettings,
+        /*
+          CONTENT
+        */
+        content:{
+          slider:sliderSettings,
+          /*
+            SOCIAL MEDIA
+          */
+          socialMedia:socialmediaSettings,
+          /*
+            CONTACT
+          */
+          contact:{
+            phoneNumbers:phoneList,
+            emails:emailList,
+            contactForm:{
+              active:true,
+              sendURL:"",
+              config:{
+                user:"",
+                pass:"",
+                host:""
+              }
+            }
+          },
+          /*
+            CATEGORIES
+          */
+          categories:{
+            items:categoriesList,
+            elseButton:elsebuttonSettings
+          }
+        }
+      },
+      backgroundAnimation:backgroundSettings,
+      photos:[],
+      posts:[]
+    }
+  });
+},50);
