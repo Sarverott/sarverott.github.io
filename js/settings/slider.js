@@ -1,16 +1,20 @@
 var sliderSettings=[
   {
-    description:" dsad sads ad sa dsa ds a",
-    title:"dsads",
+    description:"You can order from me website that fits yours needs [click WEBSITES below]",
+    title:"Webdesign",
     type:"image",
-    active:"1",
     src:"resources/image/desktop-cancer.png"
   },
   {
-    description:" dsad sads ad sa dsa ds a",
-    title:"dsads",
+    description:"Here you find some of my arts [click ART above]",
+    title:"Art Works",
     type:"image",
-    active:"1",
+    src:"resources/image/desktop-cancer.png"
+  },
+  {
+    description:"Read more about my long-term projects [click PROJECTS above]",
+    title:"My Projects",
+    type:"image",
     src:"resources/image/smileing-shadow-desktop.png"
   }
 ];
