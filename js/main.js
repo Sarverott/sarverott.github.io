@@ -1,4 +1,4 @@
-const mode="debug"
+const mode="normal"
 function getRandomString(len){
   var matrix="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
   var output="";
