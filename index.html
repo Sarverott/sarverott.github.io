@@ -1,1 +1,55 @@
-fdsfdsfds
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- -->
+    <title>Sett Sarverott</title>
+    <meta name="description" content="my website">
+    <!-- -->
+    <meta name="keywords" content="portfolio">
+    <!-- <?php
+      if(isset($article['creation-date'])){
+    ?>-->
+      <meta http-equiv="creation-date" content="" />
+    <!-- <?php } ?>-->
+    <meta name="author" content="Sett Sarverott">
+    <meta name="publisher" content="RedScope" />
+    <!-- -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap/plug/bootstrap.css">
+    <!--<?php if(!isset($_GET['noscript'])){ ?>-->
+    <script src="js/vuejs/plug/vue.js"></script>
+    <script src="js/jquery/plug/jquery-3.3.1.min.js"></script>
+    <script src="js/popper/plug/popper-1.14.4.min.js"></script>
+    <script src="js/bootstrap/plug/bootstrap.js"></script>
+    <!-- <?php } ?>-->
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+  <body>
+    <!--<?php if(!isset($_GET['noscript'])){ ?>-->
+    <noscript>
+      <div>
+        <a href="?noscript">
+          CLICK ME
+        </a>
+      </div>
+    </noscript>
+    <div id="app">
+      <main-theme
+        :title="layout.header.title"
+        :header-buttons="layout.header.buttons"
+        :background-canvas-config="backgroundAnimation"
+        :social-media-links="layout.content.socialMedia"
+      >
+      <start-screen :content="layout.content"></start-screen>
+        <!--<photo-container :photos="photos"></photo-container>-->
+      </main-theme>
+    </div>
+    <script src="js/main.js"></script>
+    <!-- <?php }else{ ?>-->
+
+    <!-- <?php } ?>-->
+  </body>
+</html>
