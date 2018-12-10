@@ -27,3 +27,4 @@ Vue.component("main-theme", {
   </div>
   `
 });
+loadNext();

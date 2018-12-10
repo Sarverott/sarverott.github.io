@@ -13,3 +13,4 @@ Vue.component("photo-container", {
     </div>
   `
 });
+loadNext();

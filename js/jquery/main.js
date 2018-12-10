@@ -15,3 +15,4 @@ function getPosts(dataObj){
     return d;
   });
 }
+loadNext();

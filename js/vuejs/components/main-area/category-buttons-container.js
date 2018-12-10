@@ -29,3 +29,4 @@ Vue.component("category-buttons-container", {
     </div>
   `
 });
+loadNext();

@@ -151,3 +151,4 @@ class sarverottMeditation //extends animationObject{
   }
 }
 animationControll.addAnimation("sarverottMeditation", sarverottMeditation);
+loadNext();

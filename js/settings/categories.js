@@ -75,4 +75,5 @@ var categoriesList=[
     ],
     link:''
   }
-]
+];
+loadNext();

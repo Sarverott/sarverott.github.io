@@ -14,3 +14,4 @@ Vue.component("photo-box", {
     </a>
   `
 });
+loadNext();

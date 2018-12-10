@@ -34,3 +34,4 @@ Vue.component("start-screen", {
     </div>
   `
 });
+loadNext();

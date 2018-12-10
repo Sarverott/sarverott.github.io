@@ -1,4 +1,11 @@
 const mode="normal"
+var listenerArray=[];
+function loadNext(){
+  var tmp=listenerArray.pop();
+  if(typeof(tmp)!="undefined"){tmp();}
+  (mode=="debug")?console.log(tmp):null;
+  (mode=="debug")?console.log("LOADING"):null;
+}
 function getRandomString(len){
   var matrix="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
   var output="";
@@ -12,9 +19,11 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 function loadScript(path){
-  var script=document.createElement('script');
-  script.src=path;
-  document.head.appendChild(script);
+  listenerArray.unshift(function(){
+    var script=document.createElement('script');
+    script.src=path;
+    document.head.appendChild(script);
+  });
 }
 var beforeLoad={
   settings:[
@@ -87,7 +96,8 @@ var beforeLoad={
     "main",
     "background-canvas",
     "header-title",
-    "send-form-message"
+    "send-form-message",
+    "slider"
   ]
 }
 /*
@@ -128,5 +138,6 @@ function loadScriptsFromArray(elementToLoad, path){
 }
 function loadForMePleas(){
   loadScriptsFromArray(beforeLoad, "js/");
+  loadNext();
 }
 loadForMePleas();

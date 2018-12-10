@@ -30,3 +30,4 @@ function titleAnimationFrame(frame, content, divide){
 $(document).ready(function(){
   titleAnimation();
 });
+loadNext();

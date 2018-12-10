@@ -108,3 +108,4 @@ function createAnimation(id, animationFunct, intervalTime){
   return new animationObject(id, animationFunct, intervalTime);
 }
 var animationControll=new animationController();
+loadNext();

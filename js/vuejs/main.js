@@ -1,6 +1,4 @@
-var vm
-setTimeout(function(){
-  vm=new Vue({
+var vm=new Vue({
     el:"#app",
     methods:{
       photosLoader:function(){
@@ -62,4 +60,4 @@ setTimeout(function(){
       posts:[]
     }
   });
-},50);
+loadNext();

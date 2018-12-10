@@ -33,3 +33,4 @@ function sendMessage(url, form, config){
     });
   }
 }
+loadNext();

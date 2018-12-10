@@ -22,3 +22,4 @@ Vue.component("main-header", {
     </header>
   `
 });
+loadNext();

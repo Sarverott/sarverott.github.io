@@ -6,3 +6,4 @@ Vue.component("hashtag", {
     </div>
   `
 });
+loadNext();

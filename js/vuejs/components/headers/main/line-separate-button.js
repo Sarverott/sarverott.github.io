@@ -8,3 +8,4 @@ Vue.component("line-separate-button", {
     </a>
   `
 });
+loadNext();

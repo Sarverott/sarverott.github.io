@@ -38,6 +38,9 @@
   height:100%;
   padding: 0;
   margin: 0;
+  position:absolute;
+  top:-100%;
+  left: 0;
 }
 .main-slider-item-image, .main-slider-item-background{
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -56,4 +59,19 @@
 main.main-theme{
   margin-top: 200px;
   z-index:100;
+}
+
+
+.main-slider-item.bottom-pos{
+  top:100%;
+}
+.main-slider-item.middle-pos{
+  top:0;
+}
+.main-slider-item.animate-me{
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }

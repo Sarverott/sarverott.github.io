@@ -11,3 +11,4 @@ Vue.component("about-me", {
     </div>
   `
 });
+loadNext();

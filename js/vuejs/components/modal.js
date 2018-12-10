@@ -11,3 +11,4 @@ Vue.component("modal-container", {
   </div>
   `
 });
+loadNext();

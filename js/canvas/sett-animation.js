@@ -138,3 +138,4 @@ puppet.init([
     src:"/img/hand_left-reduced.png"
   }
 ]);
+loadNext();

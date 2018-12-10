@@ -8,4 +8,5 @@ var elsebuttonSettings={
     'dba.png'
   ],
   link:''
-}
+};
+loadNext();

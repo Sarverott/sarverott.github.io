@@ -18,4 +18,5 @@ var headerSettings={
       link:"/"
     }
   ],
-}
+};
+loadNext();

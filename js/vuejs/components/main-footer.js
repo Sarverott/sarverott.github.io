@@ -27,3 +27,4 @@ Vue.component("main-footer", {
   </footer>
   `
 });
+loadNext();

@@ -13,3 +13,4 @@ function canvasFitting(){
   $('.background-canvas').width($(window).width());
   $('.background-canvas').height($(window).height());
 }
+loadNext();

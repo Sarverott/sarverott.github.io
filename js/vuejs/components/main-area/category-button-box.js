@@ -21,3 +21,4 @@ Vue.component("category-button-box", {
     </a>
   `
 });
+loadNext();

@@ -120,3 +120,4 @@ Vue.component("background-canvas", {
   </div>
   `
 });
+loadNext();

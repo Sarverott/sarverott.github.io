@@ -35,3 +35,4 @@ class redlinesInTheDarkness //extends animationObject{
   }
 }
 animationControll.addAnimation("redlinesInTheDarkness", redlinesInTheDarkness);
+loadNext();

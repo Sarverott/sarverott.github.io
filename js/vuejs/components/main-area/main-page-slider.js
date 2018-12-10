@@ -7,3 +7,4 @@ Vue.component("main-page-slider", {
     </div>
   `
 });
+loadNext();

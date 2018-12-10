@@ -13,3 +13,4 @@ Vue.component("social-media-icon", {
   </a>
   `
 });
+loadNext();

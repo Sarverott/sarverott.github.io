@@ -15,4 +15,5 @@ var socialmediaSettings=[
     icon:"youtube",
     address:"https://www.youtube.com/channel/UCc_ftDtaXs2u2rveb3TsnYg"
   }
-]
+];
+loadNext();

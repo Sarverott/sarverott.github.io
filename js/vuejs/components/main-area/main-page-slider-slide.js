@@ -1,7 +1,7 @@
 Vue.component("main-page-slider-slide", {
-  props:['active','description',"type","src"],
+  props:['description',"type","src"],
   template: `
-  <div class="main-slider-item" :data-activation="active">
+  <div class="main-slider-item">
     <div class="main-slider-item-inside">
       <div class="main-slider-item-background">
         <video
@@ -34,3 +34,4 @@ Vue.component("main-page-slider-slide", {
   </div>
   `
 });
+loadNext();
