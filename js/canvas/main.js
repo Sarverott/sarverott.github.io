@@ -1,3 +1,4 @@
+/*
 class animationObject{
   constructor(paint, container){
     this.paint=paint;
@@ -15,6 +16,7 @@ class animationObject{
 
   }
 }
+*/
 class animationController{
   constructor(){
     this.animationClass=[];

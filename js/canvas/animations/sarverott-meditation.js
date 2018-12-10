@@ -1,5 +1,23 @@
 
-class sarverottMeditation extends animationObject{
+class sarverottMeditation //extends animationObject{
+{
+  // animationObject
+  constructor(paint, container){
+    this.paint=paint;
+    this.container=container;
+    this.loopIndex=0;
+    this.defineListeners();
+  }
+  defineListeners(){
+
+  }
+  animate(){
+    this.loopIndex++;
+  }
+  destroy(){
+
+  }
+  // animationObject
   defineListeners(){
     this.puppet={
       loaded:0,
