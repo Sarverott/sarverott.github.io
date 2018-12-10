@@ -2,7 +2,11 @@ const mode="normal"
 var listenerArray=[];
 function loadNext(){
   var tmp=listenerArray.pop();
-  if(typeof(tmp)!="undefined"){tmp();}
+  if(typeof(tmp)!="undefined"){
+    tmp();
+  }else{
+    loadingScreen("hide");
+  }
   (mode=="debug")?console.log(tmp):null;
   (mode=="debug")?console.log("LOADING"):null;
 }
