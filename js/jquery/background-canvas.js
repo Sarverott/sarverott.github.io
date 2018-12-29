@@ -3,10 +3,14 @@ $(document).ready(function(){
     canvasFitting();
   });
   canvasFitting();
-  var tmpCanvasConfig=vm._data.backgroundAnimation
+  var tmpCanvasConfig=vm._data.backgroundAnimation;
   animationControll.createTheater(tmpCanvasConfig.id, tmpCanvasConfig.animationId, tmpCanvasConfig.intervalTime);
-  animationControll.getTheater(tmpCanvasConfig.id).startAnimation();
+  changeBackground();
 });
+function changeBackground(){
+  var tmpCanvasConfig=vm._data.backgroundAnimation
+  animationControll.changeTheaterAnimation(tmpCanvasConfig.id, tmpCanvasConfig.animationId, tmpCanvasConfig.intervalTime);
+}
 function canvasFitting(){
   //document.getElementsByClassName('background-canvas')[0].width=$(window).width();
   //document.getElementsByClassName('background-canvas')[0].height=$(window).height();

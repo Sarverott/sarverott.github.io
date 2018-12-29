@@ -3,19 +3,19 @@ var headerSettings={
   buttons:[
     {
       title:"home",
-      link:"/"
+      link:"#"
     },
     {
-      title:"art",
-      link:"/"
+      title:"jewelery",
+      link:"#squa"
     },
     {
       title:"projects",
-      link:"/"
+      link:"#"
     },
     {
       title:"contact",
-      link:"/"
+      link:"#"
     }
   ],
 };

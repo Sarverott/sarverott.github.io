@@ -1,6 +1,6 @@
 var backgroundSettings={
   animationId:"redlinesInTheDarkness",
   id:"background-animation-main-theme",
-  intervalTime:70
+  intervalTime:50
 };
 loadNext();

@@ -10,14 +10,21 @@ function loadNext(){
   (mode=="debug")?console.log(tmp):null;
   (mode=="debug")?console.log("LOADING"):null;
 }
-function getRandomString(len){
-  var matrix="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
-  var output="";
-  for(var i=0;i<len;i++){
-    output+=matrix.charAt(Math.random()*matrix.length);
-  }
-  return output;
+/*
+**
+** BEG https://gist.github.com/Sarverott/abfa3442aa90afb97fb0fdb4e3f08025
+*/
+function randomString(len=9, matrix='qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM_-.#@'){
+	var ret='';
+	for(var i=0;i<len;i++){
+		ret+=matrix.charAt(Math.floor(Math.random()*matrix.length));
+	}
+	return ret;
 }
+/*
+** END https://gist.github.com/Sarverott/abfa3442aa90afb97fb0fdb4e3f08025
+**
+*/
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
@@ -31,6 +38,7 @@ function loadScript(path){
 }
 var beforeLoad={
   settings:[
+    "general",
     "header",
     "emails",
     "footer",
@@ -91,6 +99,7 @@ var beforeLoad={
     {
       name:"animations",
       components:[
+        "square-pattern-shades",
         "redlines-in-the-darkness",
         "sarverott-meditation"
       ]

@@ -12,6 +12,7 @@ var vm=new Vue({
       }
     },
     data:{
+      general:generalSettings,
       layout:{
         /*
           HEADER

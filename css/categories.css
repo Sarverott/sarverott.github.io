@@ -22,6 +22,14 @@
   image-rendering: pixelated;
 }
 .cbb-title{
+  font-size: 20px;
+  width:100%;
+}
+.cbb-desc{
+  font-size: 12px;
+  width:100%;
+}
+.cbb-text{
   -webkit-transition: all 50ms linear;
   -moz-transition: all 50ms linear;
   -ms-transition: all 50ms linear;
@@ -31,12 +39,11 @@
   width:100%;
   top:20px;
   font-family:monospace;
-  font-size: 20px;
   text-align: center;
   opacity:0;
   color:#fff;
 }
-.category-button-box:hover .cbb-title{
+.category-button-box:hover .cbb-text{
   opacity:1;
 }
 .category-button-box:hover .cbb-background{
@@ -49,6 +56,7 @@
   /*filter: url("../resources/filters.svg#filter-1");*/
 }
 .right-side-desc{
+  text-shadow: 0 0 8px #000;
   /*
   position: absolute;
   top:30%;

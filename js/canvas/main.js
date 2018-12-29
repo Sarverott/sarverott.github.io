@@ -1,4 +1,3 @@
-/*
 class animationObject{
   constructor(paint, container){
     this.paint=paint;
@@ -16,61 +15,93 @@ class animationObject{
 
   }
 }
-*/
 class animationController{
   constructor(){
-    this.animationClass=[];
-    this.animationIDs=[];
-    this.theaterObjects=[];
-    this.theaterIDs=[];
+    //this.animationClass=[];
+    //this.animationIDs=[];
+    //this.theaterObjects=[];
+    //this.theaterIDs=[];
+    this.theaters=[];
+    this.animations=[];
   }
   addAnimation(id, funct){
-    this.animationIDs.push(id);
-    this.animationClass.push(funct);
+    this.animations.push({
+      id:id,
+      funct:funct
+    });
+    //this.animationIDs.push(id);
+    //this.animationClass.push(funct);
   }
   getAnimationIdIndex(id){
     var i=0;
-    while(i<this.animationIDs.length){
-      if(this.animationIDs[i]==id){
+    while(i<this.animations.length){
+      if(this.animations[i].id==id){
         break;
       }
       i++;
     }
-    if(i<this.animationIDs.length){
+    if(i<this.animations.length){
       return i;
     }else{
       throw "### ANIMATION ID NOT FOUND ###";
     }
   }
   getAnimation(id){
-    return this.animationClass[this.getAnimationIdIndex(id)];
+    return this.animations[this.getAnimationIdIndex(id)].funct;
   }
   listAnimations(){
     return this.animationIDs;
   }
   deleteAnimation(id){
     var indexToDelete=this.getAnimationIdIndex(id);
-    this.animationClass.splice(indexToDelete, 1);
-    this.animationIDs.splice(indexToDelete, 1);
+    this.animations.splice(indexToDelete, 1);
+    //this.animationClass.splice(indexToDelete, 1);
+    //this.animationIDs.splice(indexToDelete, 1);
+  }
+  changeTheaterAnimation(id, animationId, intervalTime){
+    this.getTheater(id).changeAnimation(this.getAnimation(animationId), intervalTime);
+    this.getTheater(id).startAnimation();
   }
   createTheater(id, animationId, intervalTime){
-    this.theaterObjects.push(new teatherObject(id, this.getAnimation(animationId), intervalTime));
-    this.theaterIDs.push(id);
+    //console.log("this.getAnimation(animationId):");
+    //console.log(this.getAnimation(animationId));
+    this.theaters.push({
+      id:id,
+      obj:new teatherObject(id, this.getAnimation(animationId), intervalTime)
+    });
+    //this.theaterObjects.push(new teatherObject(id, this.getAnimation(animationId), intervalTime));
+    //this.theaterIDs.push(id);
+  }
+  deleteTheater(id){
+    var hook=this.getTheater(id);
+    if(hook==null){
+
+    }else{
+      hook.stopAnimation();
+      //delete hook;
+    }
   }
   getTheater(id){
-    return this.theaterObjects[this.getTheaterIdIndex(id)];
+    //return this.theaterObjects[this.getTheaterIdIndex(id)];
+    var hook=this.theaters[this.getTheaterIdIndex(id)];
+    if(hook==null){
+      return null;
+    }else{
+      return hook.obj;
+    }
   }
   getTheaterIdIndex(id){
     var i=0;
-    while(i<this.theaterIDs.length){
-      if(this.theaterIDs[i]==id){
+    while(i<this.theaters.length){
+      if(this.theaters[i].id==id){
         break;
       }
       i++;
     }
-    if(i<this.theaterIDs.length){
+    if(i<this.theaters.length){
       return i;
     }else{
+      //return null;
       throw "### ANIMATION ID NOT FOUND ###";
     }
   }
@@ -80,14 +111,14 @@ class teatherObject{
   constructor(id, animationClass, intervalTime){
     this.container=document.getElementById(id);
     this.paint=this.container.getContext("2d");
-    this.backupAnimationClass=animationClass;
     this.intervalHook=null;
-    this.intervalTime=intervalTime;
-    this.initAnimation();
+    this.initAnimation(animationClass, intervalTime);
   }
-  initAnimation(){
+  initAnimation(animationClass, intervalTime){
+    this.backupAnimationClass=animationClass;
+    this.intervalTime=intervalTime;
     //console.log(this.backupAnimationClass);
-    this.activeAnimationClass=new this.backupAnimationClass(this.paint, this.container);
+    this.activeAnimationClass=new animationClass(this.paint, this.container);
   }
   startAnimation(){
     var activeAnimationClass=this.activeAnimationClass;
@@ -99,9 +130,14 @@ class teatherObject{
     clearInterval(this.intervalHook);
   }
   resetAnimation(){
-    stopAnimation();
+    this.stopAnimation();
     this.activeAnimationClass.destroy();
-    this.initAnimation();
+    this.initAnimation(this.backupAnimationClass, this.intervalTime);
+  }
+  changeAnimation(animationClass, intervalTime){
+    this.stopAnimation();
+    this.activeAnimationClass.destroy();
+    this.initAnimation(animationClass, intervalTime);
   }
 }
 function createAnimation(id, animationFunct, intervalTime){

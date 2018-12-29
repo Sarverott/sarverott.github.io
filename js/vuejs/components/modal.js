@@ -1,6 +1,8 @@
 Vue.component("modal-container", {
   props:['title', 'buttons'],
-  data:
+  data:function(){
+    return {};
+  },
   template: `
   <div class="main-theme">
     <main-header>{{title}}</main-header>

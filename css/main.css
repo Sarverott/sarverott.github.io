@@ -4,6 +4,7 @@
 @import url('./socialmedia.css');
 @import url('./categories.css');
 @import url('./slider.css');
+@import url('./footer.css');
 .background-canvas{
   background: #000;
 }
@@ -15,14 +16,7 @@ div.main-layout{
   color:#fff;
   min-height: 100%;
 }
-footer.main-layout{
-  border-top: 1px #fff solid;
-  z-index:10;
-  background: black;
-  color:#fff;
-  position: sticky;
-  bottom: -10;
-}
+
 .article-layout{
 
 }
@@ -36,9 +30,10 @@ header.prototype-layout{
 
 }
 .about-me-content{
-
+  text-shadow: 0 0 8px #000;
 }
 .about-me-title{
+  text-shadow: 0 0 8px #000;
   color: #f00;
   font-family: monospace;
 }
@@ -88,4 +83,7 @@ header.prototype-layout{
   */
   background: #400;
   color: #fff;
+}
+.hashtag{
+
 }

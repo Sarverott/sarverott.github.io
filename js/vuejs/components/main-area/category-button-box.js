@@ -2,7 +2,7 @@ Vue.component("category-button-box", {
   props:['icon', 'link'],
   methods:{
     debug:function(text){
-      console.log(text);
+      //console.log(text);
       return "";
     }
   },
@@ -14,7 +14,7 @@ Vue.component("category-button-box", {
         <div class="cbb-slider">
           <div></div>
         </div>
-        <div class="cbb-title">
+        <div class="cbb-text">
           <slot></slot>
         </div>
       </div>

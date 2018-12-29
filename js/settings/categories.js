@@ -8,7 +8,8 @@ var categoriesList=[
       'talkndevil.PNG',
       'calcul.png'
     ],
-    link:''
+    link:'',
+    text:"scratch bite cut, smileing shadow"
   },
   {
     icon:'resources/image/category-icons/programms.png',
@@ -18,7 +19,8 @@ var categoriesList=[
       'redscope.PNG',
       'sebastian.PNG'
     ],
-    link:''
+    link:'',
+    text:"Rokita, best-class-excerptor"
   },
   {
     title:"DESKTOP APPS",
@@ -29,7 +31,8 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:''
+    link:'',
+    text:""
   },
   {
     title:"WEBSITES",
@@ -40,7 +43,8 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:''
+    link:'',
+    text:""
   },
   {
     title:"MOBILE APPS",
@@ -51,7 +55,8 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:''
+    link:'',
+    text:""
   },
   /*{
     title:"DEV PROJECTS",
@@ -73,7 +78,8 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:''
+    link:'',
+    text:""
   }
 ];
 loadNext();

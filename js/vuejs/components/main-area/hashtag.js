@@ -1,7 +1,7 @@
 Vue.component("hashtag", {
   props:['link'],
   template: `
-    <div>
+    <div class="hashtag">
       <a :href="'#'+link">{{slot}}</a>
     </div>
   `

@@ -1,28 +1,9 @@
-class redlinesInTheDarkness //extends animationObject{
-{
-  // animationObject
-  constructor(paint, container){
-    this.paint=paint;
-    this.container=container;
-    this.loopIndex=0;
-    this.defineListeners();
-  }
-  defineListeners(){
+class redlinesInTheDarkness extends animationObject{
 
-  }
-  animate(){
-    this.loopIndex++;
-  }
-  destroy(){
-
-  }
-  // animationObject
-  defineListeners(){
-    //console.log(this.paint);
-  }
   animate(){
     //console.log(this);
-    this.paint.clearRect(0,0,this.container.width,this.container.height);
+    this.paint.fillStyle='rgba(0,0,0,0.1)';
+    this.paint.fillRect(0,0,this.container.width,this.container.height);
     for(var i=0;i<8;i++){
       this.paint.lineWidth=Math.floor(Math.random()*3)+1;
       this.paint.strokeStyle="#"+Math.floor(Math.random()*4)+"00";

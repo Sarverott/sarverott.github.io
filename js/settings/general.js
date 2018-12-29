@@ -1,0 +1,4 @@
+var generalSettings={
+  localization:"#"
+};
+loadNext();
