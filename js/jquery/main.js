@@ -34,7 +34,7 @@ function pseudoCategorisation(){
     case "docs":
       $.ajax({
         method:"GET",
-        url:$("#file-docs-json .btn").attr("href"),
+        url:"https://gist.githubusercontent.com"+$("#file-docs-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -43,7 +43,7 @@ function pseudoCategorisation(){
     case "games":
       $.ajax({
         method:"GET",
-        url:$("#file-games-json .btn").attr("href"),
+        url:"https://gist.githubusercontent.com"+$("#file-games-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -52,7 +52,7 @@ function pseudoCategorisation(){
     case "programms":
       $.ajax({
         method:"GET",
-        url:$("#file-programms-json .btn").attr("href"),
+        url:"https://gist.githubusercontent.com"+$("#file-programms-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -61,7 +61,7 @@ function pseudoCategorisation(){
     case "web":
       $.ajax({
         method:"GET",
-        url:$("#file-web-json .btn").attr("href"),
+        url:"https://gist.githubusercontent.com"+$("#file-web-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
