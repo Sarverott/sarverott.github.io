@@ -2,6 +2,6 @@ var generalSettings={
   localization:null,
   place:"",
   section:"",
-  apiAddress:""
+  apiAddress:"http://statisticsite.000webhostapp.com/"
 };
 loadNext();

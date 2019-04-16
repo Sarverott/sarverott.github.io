@@ -11,6 +11,20 @@ $(document).ready(function(){
 });
 var jquerySearchResultsHook=null;
 var jqueryDocsDisplayHook=null;
+var actionController={
+  docs:function(){
+
+  },
+  category:function(category, page=0){
+    $.ajax({
+      url: generalSettings.apiAddress+"api/getlist.php?site=sett%20sarverott%20site",
+      method: "POST",
+      data: {category,page}
+    }).done(function(msg){
+      console.log(msg);
+    });
+  }
+}
 function searchInDatabase(){
   var phrase=window.location.hash.substring(window.location.hash.indexOf("/"));
   var toSearch="";
@@ -99,6 +113,7 @@ function getPosts(dataObj){
 }
 function displayCard(idx){
   console.log(idx);
+
   $('.card-item').each(function(index, element){
     //console.log(element)
     if(idx==$(element).attr("card-index")){
