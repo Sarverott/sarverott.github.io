@@ -35,16 +35,16 @@ function pseudoCategorisation(){
         url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/docs.json",
       }).then(function(data){
         console.log(data);
-        jquerySearchResultsHook.searchResult=data;
+        jquerySearchResultsHook.searchResult=JSON.parse(data);
       });
       break;
     case "games":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/games.json",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/458a45b601bb5af968b0b4918cb345499978f474/games.json",
       }).then(function(data){
         console.log(data);
-        jquerySearchResultsHook.searchResult=data;
+        jquerySearchResultsHook.searchResult=JSON.parse(data);
       });
       break;
     case "programms":
@@ -53,16 +53,16 @@ function pseudoCategorisation(){
         url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/017cfab6a92408baf2a2ea6e1169771a8b3c747e/programms.json",
       }).then(function(data){
         console.log(data);
-        jquerySearchResultsHook.searchResult=data;
+        jquerySearchResultsHook.searchResult=JSON.parse(data);
       });
       break;
     case "web":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/web.json",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/458a45b601bb5af968b0b4918cb345499978f474/web.json",
       }).then(function(data){
         console.log(data);
-        jquerySearchResultsHook.searchResult=data;
+        jquerySearchResultsHook.searchResult=JSON.parse(data);
       });
       break;
     default:
