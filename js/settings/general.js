@@ -1,4 +1,7 @@
 var generalSettings={
-  localization:"#"
+  localization:null,
+  place:"",
+  section:"",
+  apiAddress:""
 };
 loadNext();

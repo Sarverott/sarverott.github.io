@@ -1,13 +1,15 @@
-const mode="normal"
+var mode="norm";
 var listenerArray=[];
+var listenerNames=[];
 function loadNext(){
+  //console.log("loadScript");
   var tmp=listenerArray.pop();
   if(typeof(tmp)!="undefined"){
     tmp();
   }else{
     loadingScreen("hide");
   }
-  (mode=="debug")?console.log(tmp):null;
+  (mode=="debug")?console.log(listenerNames.pop()):null;
   (mode=="debug")?console.log("LOADING"):null;
 }
 /*
@@ -25,11 +27,12 @@ function randomString(len=9, matrix='qwertyuiopasdfghjklzxcvbnm1234567890QWERTYU
 ** END https://gist.github.com/Sarverott/abfa3442aa90afb97fb0fdb4e3f08025
 **
 */
-function validateEmail(email) {
+function validateEmail(email){
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 function loadScript(path){
+  listenerNames.unshift(path);
   listenerArray.unshift(function(){
     var script=document.createElement('script');
     script.src=path;
@@ -38,6 +41,7 @@ function loadScript(path){
 }
 var beforeLoad={
   settings:[
+    "localizations",
     "general",
     "header",
     "emails",
@@ -47,7 +51,8 @@ var beforeLoad={
     "background",
     "phones",
     "socialmedia",
-    "slider"
+    "slider",
+    "about"
   ],
   vuejs:[
     {
@@ -84,8 +89,11 @@ var beforeLoad={
             "photo-box",
             "photo-container",
             "hashtag",
+            "search-results",
+            "docs-display",
             'start-screen',
-            'about-me'
+            'about-me',
+            "error404"
           ]
         },
         "background-canvas",
@@ -99,6 +107,7 @@ var beforeLoad={
     {
       name:"animations",
       components:[
+        "squareNoise",
         "square-pattern-shades",
         "redlines-in-the-darkness",
         "sarverott-meditation"
@@ -152,5 +161,34 @@ function loadScriptsFromArray(elementToLoad, path){
 function loadForMePleas(){
   loadScriptsFromArray(beforeLoad, "js/");
   loadNext();
+}
+function base64encrypt(content, key="okon--2137-->.<"){
+  content=btoa(content);
+  key=btoa(key);
+  var matrix="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var toCryptLen=(content.substring(content.length-2)=="==")?content.length-2:content.length;
+  var cryptKeyLen=(key.substring(key.length-2)=="==")?key.length-2:key.length;
+  var output="";
+  for(var i=0;i<toCryptLen;i++){
+    var contentChar=content.charAt(i);
+    var contentCurrentChar=0;
+    for(var j=0;j<matrix.length;j++){
+      if(matrix.charAt(j)==contentChar){
+        contentCurrentChar=j;
+        break;
+      }
+    }
+    var keyChar=key.charAt(i%key.length);
+    var keyCurrentChar=0;
+    for(var j=0;j<matrix.length;j++){
+      if(matrix.charAt(j)==keyChar){
+        keyCurrentChar=j;
+        break;
+      }
+    }
+    output+=matrix.charAt((contentCurrentChar+keyCurrentChar)%matrix.length);
+  }
+  output+=(content.substring(content.length-2)=="==")?"==":"";
+  return output;
 }
 loadForMePleas();

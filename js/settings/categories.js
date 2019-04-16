@@ -8,7 +8,7 @@ var categoriesList=[
       'talkndevil.PNG',
       'calcul.png'
     ],
-    link:'',
+    link:'#search/games',
     text:"scratch bite cut, smileing shadow"
   },
   {
@@ -19,7 +19,7 @@ var categoriesList=[
       'redscope.PNG',
       'sebastian.PNG'
     ],
-    link:'',
+    link:'#search/programms',
     text:"Rokita, best-class-excerptor"
   },
   {
@@ -31,7 +31,7 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:'',
+    link:'#search/desktop',
     text:""
   },
   {
@@ -43,7 +43,7 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:'',
+    link:'#search/web',
     text:""
   },
   {
@@ -55,7 +55,7 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:'',
+    link:'#search/mobile',
     text:""
   },
   /*{
@@ -70,7 +70,7 @@ var categoriesList=[
     link:''
   },*/
   {
-    title:"POEMS",
+    title:"DOCS",
     icon:"resources/image/category-icons/poetry.png",
     pictures:[
       'dbjsa.png',
@@ -78,7 +78,7 @@ var categoriesList=[
       'jjjj.png',
       'kalkul.PNG'
     ],
-    link:'',
+    link:'#search/docs',
     text:""
   }
 ];

@@ -25,5 +25,8 @@ function getBrowserName(){
 	if(isChrome){
 		name+='Chrome';
 	}
+	if(isBlink){
+		name+='Blink';
+	}
 	return name;
 }

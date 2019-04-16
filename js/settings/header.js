@@ -1,21 +1,21 @@
 var headerSettings={
-  title:"Sett Sarverott",
+  title:"Sett Sarverott ",
   buttons:[
     {
       title:"home",
       link:"#"
     },
     {
-      title:"jewelery",
-      link:"#squa"
+      title:"shop",
+      link:"#shop/"
     },
     {
       title:"projects",
-      link:"#"
+      link:"#projects/"
     },
     {
       title:"contact",
-      link:"#"
+      link:"#contact/"
     }
   ],
 };

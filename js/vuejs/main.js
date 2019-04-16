@@ -14,26 +14,12 @@ var vm=new Vue({
     data:{
       general:generalSettings,
       layout:{
-        /*
-          HEADER
-        */
         header:headerSettings,
-        /*
-          FOOTER
-        */
         footer:footerSettings,
-        /*
-          CONTENT
-        */
         content:{
+          about:aboutSettings,
           slider:sliderSettings,
-          /*
-            SOCIAL MEDIA
-          */
           socialMedia:socialmediaSettings,
-          /*
-            CONTACT
-          */
           contact:{
             phoneNumbers:phoneList,
             emails:emailList,
@@ -47,9 +33,6 @@ var vm=new Vue({
               }
             }
           },
-          /*
-            CATEGORIES
-          */
           categories:{
             items:categoriesList,
             elseButton:elsebuttonSettings

@@ -13,7 +13,7 @@ class squarePatternShades extends animationObject{
       }
       print(text){
         if(this.limit<this.y-text.length*this.height){
-          this.y=0;
+          this.y=0-this.height*Math.round(Math.random());
         }
 
         //this.paint.fillStyle='rgba(0,0,0,0.1)';

@@ -17,9 +17,9 @@ Vue.component("main-theme", {
   template: `
   <div class="main-theme">
     <background-canvas :config="backgroundCanvasConfig"></background-canvas>
-    <div>
+    <div style="z-index:10;">
       <main-header :buttons="headerButtons" :social-media-links="socialMediaLinks">{{title}}</main-header>
-      <main class="main-theme container">
+      <main class="main-theme">
         <slot></slot>
       </main>
       <main-footer :github="getGithubLink(socialMediaLinks)"></main-footer>

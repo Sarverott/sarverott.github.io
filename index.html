@@ -28,19 +28,7 @@
 
   </head>
   <body>
-    <!--<?php if(!isset($_GET['noscript'])){ ?>-->
-    <noscript>
-      <div>
-        <a href="?noscript">
-          CLICK ME
-        </a>
-      </div>
-    </noscript>
-    <!--
-    	ROKITA 1.0.0
-    	by Sarverott 2018
-    	MIT Licence
-    -->
+
     <div id="loading-screen" class="active">
       <style>
         @import url(css/loading-screen.css);
@@ -49,7 +37,12 @@
       <div class="animation-box">
         <div class="logo-hook">
           <div class="in">
-            <div class="description-of-logo active">CLICK HERE TO VISIT MORE</div>
+            <noscript>
+              <div>Sorry, this site requires JavaScript - turn it on in your browser. Otherwise this loading screen will never disappear.</div>
+            </noscript>
+            <div class="description-of-logo active">
+              CLICK HERE TO VISIT MORE
+            </div>
             <div class="logo name">
               <a class="pure-anchor homesite" href="">
                 <span class="logo-letter">S</span>
@@ -95,9 +88,11 @@
         :background-canvas-config="backgroundAnimation"
         :social-media-links="layout.content.socialMedia"
       >
-        <start-screen :content="layout.content"></start-screen>
-        
-        <!--<photo-container :photos="photos"></photo-container>-->
+          <search-results></search-results>
+          <start-screen :content="layout.content"></start-screen>
+          <docs-display></docs-display>
+          <error404></error404>
+          <!--<photo-container :photos="photos"></photo-container>-->
       </main-theme>
     </div>
     <script src="js/main.js"></script>

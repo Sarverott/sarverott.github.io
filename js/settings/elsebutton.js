@@ -7,6 +7,6 @@ var elsebuttonSettings={
     'Bez nazwy.png',
     'dba.png'
   ],
-  link:''
+  link:'#search/else'
 };
 loadNext();
