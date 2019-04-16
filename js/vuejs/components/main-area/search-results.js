@@ -43,13 +43,13 @@ Vue.component("search-results", {
     },
   },
   template: `
-    <div class="container card-item" card-index="search">
+    <div class="container card-item" card-index="category">
       <div class="row">
-        <div class="col-12" >
+        <!--<div class="col-12" >
           <input  style="font-family:monospace;color:white;background:black;border:1px solid white;padding:5px;width:100%" v-model="searchPhrase">
           <button  style="font-family:monospace;color:red;background:black;border:1px solid red;padding:10px;width:100%">search</button>
-        </div>
-        <div  style="font-family:monospace" class="col-12" v-if="searchPhrase!=''">Search for: {{searchPhrase}}</div>
+        </div>-->
+        <div  style="font-family:monospace" class="col-12" v-if="searchPhrase!=''">{{searchPhrase}}</div>
       </div>
       <div v-if="searchResult.length!=0">
         <a v-for="item in searchResult" :href="'#docs/'+item.link">

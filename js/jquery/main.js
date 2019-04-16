@@ -23,25 +23,26 @@ function getCategory(){
   var phrase=window.location.hash.substring(window.location.hash.indexOf("/"));
   var toSearch="";
   var pageCounter=0;
-  if(phrase.split("/").length>2&&isInteger(parseInt(phrase.split("/")[2]))&&parseInt(phrase.split("/")[2])>0){
-    pageCounter=parseInt(phrase.split("/")[2]);
+  if(phrase.split("/").length>1&&Number.isInteger(parseInt(phrase.split("/")[1]))&&parseInt(phrase.split("/")[1])>0){
+    pageCounter=parseInt(phrase.split("/")[1]);
   }
   if(phrase.indexOf("/")>0){
-    toSearch=decodeURI(urphrase.substring(0, phrase.indexOf("/")));
     $.ajax({
       method:"POST",
       url:generalSettings.apiAddress+"/api/getlist.php?site=sett%20sarverott%20site",
       data:{
-        category:decodeURI(phrase.split("/")[1]),
+        category:decodeURI(phrase.split("/")[0]),
         page:pageCounter
       }
     }).then(function(data){
       console.log(data);
       var d=JSON.parse(data);
-      jquerySearchResultsHook.data.searchResult=d.result;
+      jquerySearchResultsHook.data.searchResult=d.result.list;
+      jquerySearchResultsHook.data.pagesCount=d.result.count;
+      jquerySearchResultsHook.data.searchPhrase=decodeURI(phrase.split("/")[0]);
+      jquerySearchResultsHook.data.page=pageCounter
     });
   }else{
-
     $.ajax({
       method:"POST",
       url:generalSettings.apiAddress+"/api/getlist?site=sett%20sarverott%20site",
@@ -51,7 +52,9 @@ function getCategory(){
     }).then(function(data){
       console.log(data);
       var d=JSON.parse(data);
-      jquerySearchResultsHook.data.searchResult=d.result;
+      jquerySearchResultsHook.data.searchResult=d.result.list;
+      jquerySearchResultsHook.data.pagesCount=d.result.count;
+      jquerySearchResultsHook.data.page=pageCounter
     });
   }
 }
