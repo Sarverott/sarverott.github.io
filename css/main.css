@@ -58,7 +58,16 @@ header.prototype-layout{
   color:#fff;
   padding-bottom: 50px;
 }
-
+.search-result-box{
+  border-bottom:1px dotted red;
+  color:red;
+  text-decoration:none;
+}
+.search-result-box:hover{
+  border-bottom:1px dotted red;
+  color:white;
+  text-decoration:none;
+}
 .hashtag{
 
 }

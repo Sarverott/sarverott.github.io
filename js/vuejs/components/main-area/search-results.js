@@ -1,12 +1,6 @@
 Vue.component("search-results", {
   data:function(){
-    jquerySearchResultsHook=this;
-    return {
-      searchPhrase:"",
-      searchResult:[],
-      page:0,
-      pagesCount:0
-    };
+    return jquerySearchResultsHook;
   },
   methods:{
     paginationRange:function(page, pagesCount, limit){
@@ -49,12 +43,12 @@ Vue.component("search-results", {
           <input  style="font-family:monospace;color:white;background:black;border:1px solid white;padding:5px;width:100%" v-model="searchPhrase">
           <button  style="font-family:monospace;color:red;background:black;border:1px solid red;padding:10px;width:100%">search</button>
         </div>-->
-        <div  style="font-family:monospace" class="col-12" v-if="searchPhrase!=''">{{searchPhrase}}</div>
+        <h2 style="font-family:monospace;text-align:center" class="col-12" v-if="searchPhrase!=''">{{searchPhrase}}</h2>
       </div>
       <div v-if="searchResult.length!=0">
-        <a v-for="item in searchResult" :href="'#docs/'+item.link">
-          <div>
-            <div>
+        <a v-for="item in searchResult" :href="item.link">
+          <div style="margin:10px">
+            <div class="search-result-box">
               <h4>{{item.title}}</h4>
               <p>{{item.desc}}</p>
             </div>

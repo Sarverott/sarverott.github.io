@@ -16,24 +16,88 @@
     <meta name="publisher" content="RedScope" />
     <!-- -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      iframe{
-        width:100%;
-        height:100vh;
-        background:#000;
-      }
-      *{
-        margin:0;
-        border:0;
-        padding:0;
-      }
-      body{
-        background:#000;
-        overflow: hidden;
-      }
-    </style>
+
+    <link rel="stylesheet" href="css/bootstrap/plug/bootstrap.css">
+    <!--<?php if(!isset($_GET['noscript'])){ ?>-->
+    <script src="js/vuejs/plug/vue.js"></script>
+    <script src="js/jquery/plug/jquery-3.3.1.min.js"></script>
+    <script src="js/popper/plug/popper-1.14.4.min.js"></script>
+    <script src="js/bootstrap/plug/bootstrap.js"></script>
+    <!-- <?php } ?>-->
+    <link rel="stylesheet" href="css/main.css">
+
   </head>
   <body>
-    <iframe src="subindex.html"></iframe>
+
+    <div id="loading-screen" class="active">
+      <style>
+        @import url(css/loading-screen.css);
+      </style>
+      <script src="js/loading-screen.js"></script>
+      <div class="animation-box">
+        <div class="logo-hook">
+          <div class="in">
+            <noscript>
+              <div>Sorry, this site requires JavaScript - turn it on in your browser. Otherwise this loading screen will never disappear.</div>
+            </noscript>
+            <div class="description-of-logo active">
+              CLICK HERE TO VISIT MORE
+            </div>
+            <div class="logo name">
+              <a class="pure-anchor homesite" href="">
+                <span class="logo-letter">S</span>
+                <span class="logo-letter">A</span>
+                <span class="logo-letter">R</span>
+                <span class="logo-letter">V</span>
+                <span class="logo-letter">E</span>
+                <span class="logo-letter">R</span>
+                <span class="logo-letter">O</span>
+                <span class="logo-letter">T</span>
+                <span class="logo-letter">T</span>
+              </a>
+            </div>
+            <div class="logo soft">
+              <a class="pure-anchor homesite" href="">
+                <span class="logo-letter">S</span>
+                <span class="logo-letter">O</span>
+                <span class="logo-letter">F</span>
+                <span class="logo-letter">T</span>
+                <span class="logo-letter">W</span>
+                <span class="logo-letter">A</span>
+                <span class="logo-letter">R</span>
+                <span class="logo-letter">E</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="loading-circle-hook">
+          <div class="in">
+            <div class="loading-circle"></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        readGist();
+      </script>
+    </div>
+    <!-- -->
+    <div id="app">
+      <main-theme
+        :title="layout.header.title"
+        :header-buttons="layout.header.buttons"
+        :background-canvas-config="backgroundAnimation"
+        :social-media-links="layout.content.socialMedia"
+      >
+          <search-results></search-results>
+          <start-screen :content="layout.content"></start-screen>
+          <docs-display></docs-display>
+          <error404></error404>
+          <!--<photo-container :photos="photos"></photo-container>-->
+      </main-theme>
+    </div>
+    <script src="js/main.js"></script>
+    <!-- <?php }else{ ?>-->
+
+    <!-- <?php } ?>-->
   </body>
 </html>

@@ -9,40 +9,58 @@ $(document).ready(function(){
     null
   }
 });
-var jquerySearchResultsHook=null;
-var jqueryDocsDisplayHook=null;
-var actionController={
-  docs:function(){
+var actionController=function(label){
+  switch(label){
+    case 'docs':
+      var hash=window.location.hash.split("/");
+      if(hash.length>1){
 
-  },
-  category:function(){
-    jquerySearchResultsHook.data.pagesCount=0
-    jquerySearchResultsHook.data.searchPhrase=window.location.hash.substring(window.location.hash.indexOf("/"));
-    jquerySearchResultsHook.data.page=0
-    switch(jquerySearchResultsHook.data.searchPhrase){
-      case "documentations":
-        jquerySearchResultsHook.data.searchResult=[
-          {
-            title:"rokita - documentation",
-            description:"dokumentacja projektu ROKITA"
-          },
-          {
-            title:"qwertyuiop",
-            description:"qwertyuiopasdfghjkzxcvbnmqwertyuiopasdfghjkzxcvbnm"
-          }
-        ];
-        break;
-      case "games":
-        jquerySearchResultsHook.data.searchResult=[];
-        break;
-      case "programms":
-        jquerySearchResultsHook.data.searchResult=[];
-        break;
-      case "documentations":
-        jquerySearchResultsHook.data.searchResult=[];
-        break;
-    }
+      }else{
+
+      }
+    break;
+  case 'category':
+    pseudoCategorisation();
     //getCategory()
+  }
+}
+function pseudoCategorisation(){
+  jquerySearchResultsHook.pagesCount=0;
+  jquerySearchResultsHook.searchPhrase=window.location.hash.split("/")[1];
+  jquerySearchResultsHook.page=0;
+  switch(jquerySearchResultsHook.searchPhrase){
+    case "docs":
+      $.ajax({
+        method:"GET",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/docs.json",
+      }).then(function(data){
+        jquerySearchResultsHook.searchResult=data;
+      });
+      break;
+    case "games":
+      $.ajax({
+        method:"GET",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/games.json",
+      }).then(function(data){
+        jquerySearchResultsHook.searchResult=data;
+      });
+      break;
+    case "programms":
+      $.ajax({
+        method:"GET",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/programms.json",
+      }).then(function(data){
+        jquerySearchResultsHook.searchResult=data;
+      });
+      break;
+    case "web":
+      $.ajax({
+        method:"GET",
+        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/web.json",
+      }).then(function(data){
+        jquerySearchResultsHook.searchResult=data;
+      });
+      break;
   }
 }
 function getCategory(){
@@ -134,9 +152,8 @@ function getStatData(){
 }
 function displayCard(idx){
   console.log(idx);
-    if(actionController.hasOwnProperty(idx)){
-      actionController[idx]();
-    }
+
+    actionController(idx);
   $('.card-item').each(function(index, element){
     //console.log(element)
     if(idx==$(element).attr("card-index")){
