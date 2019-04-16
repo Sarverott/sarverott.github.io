@@ -5,7 +5,7 @@ var socialmediaSettings=[
   },
   {
     icon:"tumblr",
-    address:"https://www.sarverott.tumblr.com/"
+    address:"http://www.sarverott.tumblr.com/"
   },
   {
     icon:"github",

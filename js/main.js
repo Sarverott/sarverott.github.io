@@ -159,7 +159,7 @@ function loadScriptsFromArray(elementToLoad, path){
   }
 }
 function loadForMePleas(){
-  loadScriptsFromArray(beforeLoad, "js/");
+  loadScriptsFromArray(beforeLoad, "https://sarverott.github.io/js/");
   loadNext();
 }
 function base64encrypt(content, key="okon--2137-->.<"){

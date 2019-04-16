@@ -54,7 +54,6 @@ Vue.component("search-results", {
       <div v-if="searchResult.length!=0">
         <a v-for="item in searchResult" :href="'#docs/'+item.link">
           <div>
-            <img :src="item.img">
             <div>
               <h4>{{item.title}}</h4>
               <p>{{item.desc}}</p>

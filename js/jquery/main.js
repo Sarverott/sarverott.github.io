@@ -13,10 +13,36 @@ var jquerySearchResultsHook=null;
 var jqueryDocsDisplayHook=null;
 var actionController={
   docs:function(){
-    get
+
   },
   category:function(){
-    getCategory()
+    jquerySearchResultsHook.data.pagesCount=0
+    jquerySearchResultsHook.data.searchPhrase=window.location.hash.substring(window.location.hash.indexOf("/"));
+    jquerySearchResultsHook.data.page=0
+    switch(jquerySearchResultsHook.data.searchPhrase){
+      case "documentations":
+        jquerySearchResultsHook.data.searchResult=[
+          {
+            title:"rokita - documentation",
+            description:"dokumentacja projektu ROKITA"
+          },
+          {
+            title:"qwertyuiop",
+            description:"qwertyuiopasdfghjkzxcvbnmqwertyuiopasdfghjkzxcvbnm"
+          }
+        ];
+        break;
+      case "games":
+        jquerySearchResultsHook.data.searchResult=[];
+        break;
+      case "programms":
+        jquerySearchResultsHook.data.searchResult=[];
+        break;
+      case "documentations":
+        jquerySearchResultsHook.data.searchResult=[];
+        break;
+    }
+    //getCategory()
   }
 }
 function getCategory(){
