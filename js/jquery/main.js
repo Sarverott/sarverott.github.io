@@ -28,11 +28,13 @@ function pseudoCategorisation(){
   jquerySearchResultsHook.pagesCount=0;
   jquerySearchResultsHook.searchPhrase=window.location.hash.split("/")[1];
   jquerySearchResultsHook.page=0;
+  $("#h-box").load("https://gist.github.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5 .gist-content");
+
   switch(jquerySearchResultsHook.searchPhrase){
     case "docs":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/116bc954cc96103147316ae202e702a25160e6c2/docs.json",
+        url:$("#file-docs-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -41,7 +43,7 @@ function pseudoCategorisation(){
     case "games":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/458a45b601bb5af968b0b4918cb345499978f474/games.json",
+        url:$("#file-games-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -50,7 +52,7 @@ function pseudoCategorisation(){
     case "programms":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/017cfab6a92408baf2a2ea6e1169771a8b3c747e/programms.json",
+        url:$("#file-programms-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
@@ -59,7 +61,7 @@ function pseudoCategorisation(){
     case "web":
       $.ajax({
         method:"GET",
-        url:"https://gist.githubusercontent.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5/raw/458a45b601bb5af968b0b4918cb345499978f474/web.json",
+        url:$("#file-web-json .btn").attr("href"),
       }).then(function(data){
         console.log(data);
         jquerySearchResultsHook.searchResult=JSON.parse(data);
