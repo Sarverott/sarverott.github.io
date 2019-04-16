@@ -5,14 +5,14 @@ var localizationsSettings={
       animationIntervalTime:70
     },
     docs:{
-      animationId:"redlinesInTheDarkness",
+      animationId:"squarePatternShades",
       animationIntervalTime:50
     },
     shop:{
       animationId:"redlinesInTheDarkness",
       animationIntervalTime:70
     },
-    search:{
+    category:{
       animationId:"squarePatternShades",
       animationIntervalTime:70
     },
