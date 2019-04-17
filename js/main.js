@@ -52,8 +52,13 @@ var beforeLoad={
     "phones",
     "socialmedia",
     "slider",
-    "about"
+    "about",
+    "docs-list"
   ],
+  minified:[
+    "main.min"
+  ]
+  /*
   vuejs:[
     {
       name:"components",
@@ -61,8 +66,6 @@ var beforeLoad={
         {
           name:"layouts",
           components:[
-            "prototype-theme",
-            "article-theme",
             "main-theme"
           ]
         },
@@ -86,9 +89,6 @@ var beforeLoad={
             "main-page-slider-slide",
             "category-buttons-container",
             "category-button-box",
-            "photo-box",
-            "photo-container",
-            "hashtag",
             "search-results",
             "docs-display",
             'start-screen',
@@ -120,7 +120,7 @@ var beforeLoad={
     "header-title",
     "send-form-message",
     "slider"
-  ]
+  ]*/
 }
 var jquerySearchResultsHook={
   searchPhrase:"",

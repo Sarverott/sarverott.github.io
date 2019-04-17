@@ -9,7 +9,7 @@ var categoriesList=[
       'calcul.png'
     ],
     link:'#category/games',
-    text:"scratch bite cut, smileing shadow"
+    text:"scratch bite cut, smileing shadow, POJ_B"
   },
   {
     icon:'resources/image/category-icons/programms.png',
@@ -20,7 +20,7 @@ var categoriesList=[
       'sebastian.PNG'
     ],
     link:'#category/programms',
-    text:"Rokita, best-class-excerptor"
+    text:"Rokita, math-calc, best-class-excerptor"
   },
   {
     title:"DESKTOP APPS",
@@ -79,7 +79,7 @@ var categoriesList=[
       'kalkul.PNG'
     ],
     link:'#category/docs',
-    text:""
+    text:"Tutoriale, Dokumentacje"
   }
 ];
 loadNext();

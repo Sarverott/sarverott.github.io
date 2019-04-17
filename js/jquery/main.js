@@ -28,8 +28,13 @@ function pseudoCategorisation(){
   jquerySearchResultsHook.pagesCount=0;
   jquerySearchResultsHook.searchPhrase=window.location.hash.split("/")[1];
   jquerySearchResultsHook.page=0;
-  $("#h-box").load("https://gist.github.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5 .gist-content");
-
+  //$("#h-box").load("https://gist.github.com/Sarverott/6d82899884c20c9dd12594e8c54a19b5 .gist-content");
+  if(docsListConfig.hasOwnProperty(jquerySearchResultsHook.searchPhrase)){
+    jquerySearchResultsHook.searchResult=docsListConfig[jquerySearchResultsHook.searchPhrase];
+  }else{
+    jquerySearchResultsHook.searchResult=[];
+  }
+  /*
   switch(jquerySearchResultsHook.searchPhrase){
     case "docs":
       $.ajax({
@@ -70,6 +75,7 @@ function pseudoCategorisation(){
     default:
       jquerySearchResultsHook.searchResult=[];
   }
+  */
 }
 function getCategory(){
   var phrase=window.location.hash.substring(window.location.hash.indexOf("/"));
@@ -130,6 +136,7 @@ function getDocument(){
   //}
 }
 function hashChangeEvent(init=true){
+
   generalSettings.localization=window.location.hash;
   var loc=generalSettings.localization.substring(1, generalSettings.localization.indexOf("/"));
   if(typeof(localizationsSettings.places[loc])!="undefined"){
@@ -148,6 +155,7 @@ function hashChangeEvent(init=true){
   if(init){
     changeBackground();
   }
+  window.scrollTo(0,0);
 }
 function changeCard(cardName){
 
