@@ -1,8 +1,4 @@
 var aboutSettings={
-  content:`I am Sarverott, blacksmith of the darkness, necromancer, shaman of technology, ghost of the future.
-  I live in the underground of a large city cluster.
-  My name is contrived, it doesn't mean anything in any known language.
-  Since i become myself my goal is to spread dark knowlage and culture.
-  I hope You will be interested in my work.`
+  content:`I am programmer and IT technician. Coding is my passion. I love to finding new ways to solve the problem. Creating mechanisms on servers, on IoT electronics and in games makes me proud when they makes their work. I hope that my work will be interesting for You.`
 };
 loadNext();
