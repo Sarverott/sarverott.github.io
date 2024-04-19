@@ -92,17 +92,22 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               <div v-for="repo in repos" v-if="!repo.archived" class="col">
                 <div class="card shadow-sm">
-                  <img :src="'https://github-readme-stats.vercel.app/api/pin?username='+repo.owner.login+'\&repo='+repo.name+'\&title_color=fff\&icon_color=f9f9f9\&text_color=9f9f9f\&bg_color=151515\&show_owner=true'">
+                  <img
+                    :src="'https://github-readme-stats.vercel.app/api/pin?username='+repo.owner.login+'\&repo='+repo.name+'\&title_color=fff\&icon_color=f9f9f9\&text_color=9f9f9f\&bg_color=151515\&show_owner=true'"
+                    alt="repo.full_name"
+                  >
                   <div class="card-body">
-                    <h6>{{repo.name}}</h6>
+                    <h6></h6>
                     <p class="card-text">{{repo.description}}</p>
-
-                                        <img :src="'https://img.shields.io/github/watchers/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23repository-details-watch-button'">
-                                        <img :src="'https://img.shields.io/github/forks/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23fork-button'">
-                                        <img :src="'https://img.shields.io/github/stars/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23repo-stars-counter-star'">
-                                        <img :src="'https://img.shields.io/github/last-commit/'+repo.owner.login+'/'+repo.name+'/master'">
-                                        <img :src="'https://img.shields.io/github/commit-activity/t/'+repo.owner.login+'/'+repo.name+'?style=for-the-badge&label=TOTAL%20commits%20count'">
-
+                    <div class="row sett-repo-card-buttons-box">
+                      <img class="col" :src="'https://img.shields.io/github/watchers/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23repository-details-watch-button'">
+                      <img class="col" :src="'https://img.shields.io/github/forks/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23fork-button'">
+                      <img class="col" :src="'https://img.shields.io/github/stars/'+repo.owner.login+'/'+repo.name+'?link=https%3A%2F%2Fgithub.com%2F'+repo.owner.login+'%2F'+repo.name+'%23repo-stars-counter-star'">
+                    </div>
+                    <div class="row sett-repo-card-buttons-box">
+                      <img class="col" :src="'https://img.shields.io/github/last-commit/'+repo.owner.login+'/'+repo.name+'/master'">
+                      <img class="col" :src="'https://img.shields.io/github/commit-activity/t/'+repo.owner.login+'/'+repo.name+'?style=for-the-badge&label=TOTAL%20commits%20count'">
+                    </div>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <a target="_blank" :href="repo.html_url">

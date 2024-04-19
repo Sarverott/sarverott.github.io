@@ -12,3 +12,6 @@ img.sett-main-header-logo{
 #the-head, #the-foot{
   background: rgba(0, 0, 0, 0.8);
 }
+.sett-repo-card-buttons-box{
+  margin-bottom: 5px;
+}
