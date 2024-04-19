@@ -1,0 +1,14 @@
+img.sett-main-header-logo{
+  height: 50px;
+  margin: auto 20px;
+}
+#first-module{
+  height: 80vh;
+  overflow-y: scroll;
+}
+#sett-preview{
+  margin-top: 100px;
+}
+#the-head, #the-foot{
+  background: rgba(0, 0, 0, 0.8);
+}
