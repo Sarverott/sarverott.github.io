@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  TEST: x
+
+tasks:
+  default: task:run
+  run:
+    cmds:
+      - npm install --save-dev
+      - npm run dev
+    #silent: true
