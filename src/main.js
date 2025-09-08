@@ -201,7 +201,6 @@ document.querySelector('#root').innerHTML = `
         </footer>
       </div>
 `
-import './style.css'
 
 
 var dataContainer = {
